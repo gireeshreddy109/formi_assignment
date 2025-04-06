@@ -17,6 +17,11 @@ A FastAPI-based REST API to locate the nearest Moustache property based on a use
 
 ---
 
+To enhance the user experience, the API intelligently handles spelling mistakes or slightly incorrect location names. 
+This is achieved using RapidFuzz, a fast and accurate string matching library based on fuzzy logic. 
+When a user submits a location name—even if it's misspelled or partially incorrect—the API uses RapidFuzz to find the 
+most relevant match from a predefined list of possible locations. This ensures reliable results even when the input isn't perfectly formatted.
+
 ## Requirements
 
 - Python 3.9+
@@ -66,4 +71,4 @@ Response if no property is within 50km:
   "response_time_sec": 0.5
 }
 
-To enhance the user experience, the API intelligently handles spelling mistakes or slightly incorrect location names. This is achieved using RapidFuzz, a fast and accurate string matching library based on fuzzy logic. When a user submits a location name—even if it's misspelled or partially incorrect—the API uses RapidFuzz to find the most relevant match from a predefined list of possible locations. This ensures reliable results even when the input isn't perfectly formatted.
+
